@@ -21,9 +21,13 @@
       --max: 1240px;
     }
 
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
 
-    html { scroll-behavior: smooth; }
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       margin: 0;
@@ -41,7 +45,6 @@
       box-shadow: 0 24px 60px rgba(26, 31, 44, .18);
     }
 
-    /* ---------- topo ---------- */
     .strip {
       background: var(--navy);
       color: #fff;
@@ -55,8 +58,16 @@
       text-transform: uppercase;
       font-weight: 500;
     }
-    .strip span { opacity: .75; }
-    .strip .gold { color: var(--gold); opacity: 1; font-weight: 600; }
+
+    .strip span {
+      opacity: .75;
+    }
+
+    .strip .gold {
+      color: var(--gold);
+      opacity: 1;
+      font-weight: 600;
+    }
 
     .masthead {
       display: flex;
@@ -67,13 +78,28 @@
       border-bottom: 3px solid var(--navy);
       flex-wrap: wrap;
     }
-    .logo { width: 160px; height: auto; flex: none; }
-    .back {
-      font-size: 11px; letter-spacing: .14em; text-transform: uppercase; font-weight: 700;
-      color: var(--navy); text-decoration: none;
-      border: 1px solid var(--navy); padding: 9px 16px;
+
+    .logo {
+      width: 160px;
+      height: auto;
+      flex: none;
     }
-    .back:hover { background: var(--navy); color: #fff; }
+
+    .back {
+      font-size: 11px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--navy);
+      text-decoration: none;
+      border: 1px solid var(--navy);
+      padding: 9px 16px;
+    }
+
+    .back:hover {
+      background: var(--navy);
+      color: #fff;
+    }
 
     nav {
       display: flex;
@@ -91,147 +117,525 @@
       background: var(--paper);
       z-index: 5;
     }
-    nav a { text-decoration: none; color: inherit; white-space: nowrap; padding-bottom: 2px; }
-    nav a:hover { color: var(--gold); }
 
-    /* ---------- sumário ---------- */
-    .sumario { padding: 34px 32px 10px; }
+    nav a {
+      text-decoration: none;
+      color: inherit;
+      white-space: nowrap;
+      padding-bottom: 2px;
+    }
+
+    nav a:hover {
+      color: var(--gold);
+    }
+
+    .sumario {
+      padding: 34px 32px 10px;
+    }
+
     .sumario h2 {
-      font-family: 'Fraunces', serif; font-size: 26px; margin: 0 0 6px; color: var(--navy-deep);
+      font-family: 'Fraunces', serif;
+      font-size: 26px;
+      margin: 0 0 6px;
+      color: var(--navy-deep);
     }
-    .sumario > p { margin: 0 0 22px; font-size: 14px; color: var(--muted); }
-    .sumario ol { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0 34px; margin: 0; padding: 0; list-style: none; counter-reset: s; }
-    .sumario li { counter-increment: s; padding: 11px 0; border-bottom: 1px dashed var(--rule); font-size: 14px; }
-    .sumario li::before { content: counter(s, decimal-leading-zero); color: var(--gold); font-weight: 700; margin-right: 10px; font-size: 12px; }
-    .sumario a { color: var(--ink); text-decoration: none; }
-    .sumario a:hover { color: var(--gold); }
-    .sumario small { color: var(--muted); }
 
-    /* ---------- editorias ---------- */
-    .editoria { padding: 40px 32px 10px; border-top: 1px solid var(--rule); margin-top: 30px; }
-    .editoria-head { border-bottom: 3px solid var(--navy); padding-bottom: 12px; margin-bottom: 26px; }
+    .sumario>p {
+      margin: 0 0 22px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .sumario ol {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0 34px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      counter-reset: s;
+    }
+
+    .sumario li {
+      counter-increment: s;
+      padding: 11px 0;
+      border-bottom: 1px dashed var(--rule);
+      font-size: 14px;
+    }
+
+    .sumario li::before {
+      content: counter(s, decimal-leading-zero);
+      color: var(--gold);
+      font-weight: 700;
+      margin-right: 10px;
+      font-size: 12px;
+    }
+
+    .sumario a {
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    .sumario a:hover {
+      color: var(--gold);
+    }
+
+    .sumario small {
+      color: var(--muted);
+    }
+
+    .editoria {
+      padding: 40px 32px 10px;
+      border-top: 1px solid var(--rule);
+      margin-top: 30px;
+    }
+
+    .editoria-head {
+      border-bottom: 3px solid var(--navy);
+      padding-bottom: 12px;
+      margin-bottom: 26px;
+    }
+
     .editoria-head h2 {
-      font-family: 'Fraunces', serif; font-size: 30px; line-height: 1.1; margin: 0 0 6px; color: var(--navy-deep);
+      font-family: 'Fraunces', serif;
+      font-size: 30px;
+      line-height: 1.1;
+      margin: 0 0 6px;
+      color: var(--navy-deep);
     }
-    .editoria-head p { margin: 0; font-size: 13px; color: var(--muted); line-height: 1.5; max-width: 70ch; }
 
-    .conteudo { display: grid; grid-template-columns: 1fr 280px; gap: 44px; }
-    .conteudo.solo { grid-template-columns: 1fr; max-width: 820px; }
+    .editoria-head p {
+      margin: 0;
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.5;
+      max-width: 70ch;
+    }
+
+    .conteudo {
+      display: grid;
+      grid-template-columns: 1fr 280px;
+      gap: 44px;
+    }
+
+    .conteudo.solo {
+      grid-template-columns: 1fr;
+      max-width: 820px;
+    }
 
     h3.titulo {
-      font-family: 'Fraunces', serif; font-size: 26px; line-height: 1.15;
-      color: var(--navy-deep); margin: 0 0 14px; letter-spacing: -.01em;
+      font-family: 'Fraunces', serif;
+      font-size: 26px;
+      line-height: 1.15;
+      color: var(--navy-deep);
+      margin: 0 0 14px;
+      letter-spacing: -.01em;
     }
-    h3.titulo + .assinatura { margin-top: -8px; }
+
+    h3.titulo+.assinatura {
+      margin-top: -8px;
+    }
+
     .assinatura {
-      font-size: 11px; letter-spacing: .1em; text-transform: uppercase;
-      color: var(--muted); font-weight: 600; margin: 0 0 18px;
+      font-size: 11px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 600;
+      margin: 0 0 18px;
     }
-    .artigo p { font-size: 15.5px; line-height: 1.72; color: #3d4457; margin: 0 0 16px; }
+
+    .artigo p {
+      font-size: 15.5px;
+      line-height: 1.72;
+      color: #3d4457;
+      margin: 0 0 16px;
+    }
+
     .artigo h4 {
-      font-family: 'Fraunces', serif; font-size: 20px; color: var(--navy-deep); margin: 26px 0 10px;
+      font-family: 'Fraunces', serif;
+      font-size: 20px;
+      color: var(--navy-deep);
+      margin: 26px 0 10px;
     }
-    .artigo + .artigo { margin-top: 38px; padding-top: 32px; border-top: 1px solid var(--rule); }
+
+    .artigo+.artigo {
+      margin-top: 38px;
+      padding-top: 32px;
+      border-top: 1px solid var(--rule);
+    }
 
     .photo {
       position: relative;
       height: 320px;
       margin: 0 0 22px;
       background: linear-gradient(135deg, var(--navy) 0%, #3c4a6d 55%, var(--gold) 160%);
-      display: flex; align-items: flex-end; padding: 16px;
+      display: flex;
+      align-items: flex-end;
+      padding: 16px;
     }
-    .photo.grafico { background: linear-gradient(135deg, #3c4a6d 0%, var(--navy) 60%, #6b5a45 150%); height: 400px; }
-    .photo::after {
-      content: attr(data-arquivo);
-      position: absolute; top: 12px; right: 14px;
-      font-size: 10px; letter-spacing: .12em; font-weight: 700;
-      color: rgba(255, 255, 255, .55);
-      z-index: 3;
+
+    .photo.grafico {
+      background: linear-gradient(135deg, #3c4a6d 0%, var(--navy) 60%, #6b5a45 150%);
+      height: 400px;
     }
-    .photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 30%; z-index: 1; }
-    .photo.grafico img { object-fit: contain; object-position: center; background: #fdf9f0; }
+
+    .photo.alta {
+      height: auto;
+      aspect-ratio: 720 / 380;
+    }
+
+    .photo img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 30%;
+      z-index: 1;
+    }
+
+    .photo.grafico img {
+      object-fit: contain;
+      object-position: center;
+      background: #fdf9f0;
+    }
+
     .photo::before {
-      content: ""; position: absolute; inset: 0; z-index: 2;
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 2;
       background: linear-gradient(to top, rgba(29, 38, 57, .82), rgba(29, 38, 57, 0) 55%);
     }
-    .photo figcaption { position: relative; z-index: 3; color: rgba(255, 255, 255, .9); font-size: 11.5px; line-height: 1.5; max-width: 66%; }
+
+    .photo figcaption {
+      position: relative;
+      z-index: 3;
+      color: rgba(255, 255, 255, .9);
+      font-size: 11.5px;
+      line-height: 1.5;
+      max-width: 66%;
+    }
 
     .pull {
-      border-left: 4px solid var(--gold); background: #f6f2ec;
-      padding: 20px 22px; margin: 24px 0;
+      border-left: 4px solid var(--gold);
+      background: #f6f2ec;
+      padding: 20px 22px;
+      margin: 24px 0;
     }
-    .pull p { font-family: 'Fraunces', serif; font-size: 19px; line-height: 1.4; color: var(--navy-deep); margin: 0 0 8px; }
-    .pull span { font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); font-weight: 700; }
 
-    .callout { background: var(--navy); color: #fff; padding: 22px 24px; margin: 26px 0; }
-    .callout h4 { font-size: 11px; letter-spacing: .18em; text-transform: uppercase; color: var(--gold); margin: 0 0 12px; font-weight: 700; }
-    .callout p, .callout li { color: rgba(255, 255, 255, .88); font-size: 14.5px; line-height: 1.6; margin: 0; }
-    .callout ul { margin: 0; padding-left: 18px; }
-    .callout li { margin-bottom: 7px; }
+    .pull p {
+      font-family: 'Fraunces', serif;
+      font-size: 19px;
+      line-height: 1.4;
+      color: var(--navy-deep);
+      margin: 0 0 8px;
+    }
 
-    /* ---------- lateral das editorias ---------- */
+    .pull span {
+      font-size: 11px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    .callout {
+      background: var(--navy);
+      color: #fff;
+      padding: 22px 24px;
+      margin: 26px 0;
+    }
+
+    .callout h4 {
+      font-size: 11px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin: 0 0 12px;
+      font-weight: 700;
+    }
+
+    .callout p,
+    .callout li {
+      color: rgba(255, 255, 255, .88);
+      font-size: 14.5px;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    .callout ul {
+      margin: 0;
+      padding-left: 18px;
+    }
+
+    .callout li {
+      margin-bottom: 7px;
+    }
+
     aside h5 {
-      font-size: 11px; letter-spacing: .18em; text-transform: uppercase;
-      color: var(--navy); margin: 0 0 14px; padding-bottom: 8px;
-      border-bottom: 2px solid var(--navy); font-weight: 700;
+      font-size: 11px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--navy);
+      margin: 0 0 14px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--navy);
+      font-weight: 700;
     }
-    .block { margin-bottom: 28px; }
-    .stats { display: grid; gap: 2px; background: var(--rule); }
-    .stat { background: var(--paper); padding: 12px 14px; }
-    .stat b { display: block; font-family: 'Fraunces', serif; font-size: 24px; color: var(--gold); line-height: 1; margin-bottom: 4px; }
-    .stat span { font-size: 12px; color: var(--muted); line-height: 1.4; }
-    .lista { list-style: none; margin: 0; padding: 0; }
-    .lista li { padding: 9px 0; border-bottom: 1px dashed var(--rule); font-size: 13px; line-height: 1.5; color: #4b5164; }
-    .lista b { color: var(--navy-deep); }
-    .box { background: var(--gold-soft); padding: 18px 20px; font-size: 13px; line-height: 1.6; color: #5c5346; }
-    .box b { display: block; color: var(--navy-deep); margin-bottom: 6px; font-size: 14px; }
-    .box a { color: var(--navy); font-weight: 600; word-break: break-all; }
 
-    /* ---------- cattaverso ---------- */
-    .notas { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px 34px; }
-    .nota { border-top: 2px solid var(--navy); padding-top: 14px; }
-    .nota h4 { font-family: 'Fraunces', serif; font-size: 19px; line-height: 1.2; margin: 0 0 8px; color: var(--navy-deep); }
-    .nota p { font-size: 13.5px; line-height: 1.65; color: #4b5164; margin: 0 0 8px; }
-    .nota a { font-size: 12px; color: var(--navy); font-weight: 600; word-break: break-all; }
+    .block {
+      margin-bottom: 28px;
+    }
 
-    /* ---------- aniversariantes ---------- */
-    .intro-aniv { font-size: 15.5px; line-height: 1.7; color: #3d4457; font-style: italic; margin: 0 0 24px; max-width: 70ch; }
-    .aniversariantes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-    .pessoa { background: #f6f2ec; padding: 18px 18px 20px; border-top: 3px solid var(--gold); }
-    .pessoa .top { display: flex; align-items: center; gap: 11px; margin-bottom: 10px; }
+    .stats {
+      display: grid;
+      gap: 2px;
+      background: var(--rule);
+    }
+
+    .stat {
+      background: var(--paper);
+      padding: 12px 14px;
+    }
+
+    .stat b {
+      display: block;
+      font-family: 'Fraunces', serif;
+      font-size: 24px;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    .stat span {
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.4;
+    }
+
+    .lista {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .lista li {
+      padding: 9px 0;
+      border-bottom: 1px dashed var(--rule);
+      font-size: 13px;
+      line-height: 1.5;
+      color: #4b5164;
+    }
+
+    .lista b {
+      color: var(--navy-deep);
+    }
+
+    .box {
+      background: var(--gold-soft);
+      padding: 18px 20px;
+      font-size: 13px;
+      line-height: 1.6;
+      color: #5c5346;
+    }
+
+    .box b {
+      display: block;
+      color: var(--navy-deep);
+      margin-bottom: 6px;
+      font-size: 14px;
+    }
+
+    .box a {
+      color: var(--navy);
+      font-weight: 600;
+      word-break: break-all;
+    }
+
+    .notas {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px 34px;
+    }
+
+    .nota {
+      border-top: 2px solid var(--navy);
+      padding-top: 14px;
+    }
+
+    .nota h4 {
+      font-family: 'Fraunces', serif;
+      font-size: 19px;
+      line-height: 1.2;
+      margin: 0 0 8px;
+      color: var(--navy-deep);
+    }
+
+    .nota p {
+      font-size: 13.5px;
+      line-height: 1.65;
+      color: #4b5164;
+      margin: 0 0 8px;
+    }
+
+    .nota a {
+      font-size: 12px;
+      color: var(--navy);
+      font-weight: 600;
+      word-break: break-all;
+    }
+
+    .intro-aniv {
+      font-size: 15.5px;
+      line-height: 1.7;
+      color: #3d4457;
+      font-style: italic;
+      margin: 0 0 24px;
+      max-width: 70ch;
+    }
+
+    .aniversariantes {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .pessoa {
+      background: #f6f2ec;
+      padding: 18px 18px 20px;
+      border-top: 3px solid var(--gold);
+    }
+
+    .pessoa .top {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      margin-bottom: 10px;
+    }
+
     .pessoa .av {
-      width: 38px; height: 38px; flex: none; border-radius: 50%;
-      background: var(--navy); color: var(--gold);
-      display: grid; place-items: center; font-size: 12px; font-weight: 700;
+      width: 38px;
+      height: 38px;
+      flex: none;
+      border-radius: 50%;
+      background: var(--navy);
+      color: var(--gold);
+      display: grid;
+      place-items: center;
+      font-size: 12px;
+      font-weight: 700;
     }
-    .pessoa b { display: block; font-size: 14px; color: var(--navy-deep); line-height: 1.25; }
-    .pessoa .data { font-size: 11px; letter-spacing: .1em; color: var(--gold); font-weight: 700; }
-    .pessoa p { margin: 0; font-size: 13px; line-height: 1.6; color: #4b5164; }
-    .fecho { margin: 26px 0 0; font-family: 'Fraunces', serif; font-size: 19px; line-height: 1.45; color: var(--navy-deep); }
 
-    /* ---------- rodapé ---------- */
+    .pessoa b {
+      display: block;
+      font-size: 14px;
+      color: var(--navy-deep);
+      line-height: 1.25;
+    }
+
+    .pessoa .data {
+      font-size: 11px;
+      letter-spacing: .1em;
+      color: var(--gold);
+      font-weight: 700;
+    }
+
+    .pessoa p {
+      margin: 0;
+      font-size: 13px;
+      line-height: 1.6;
+      color: #4b5164;
+    }
+
+    .fecho {
+      margin: 26px 0 0;
+      font-family: 'Fraunces', serif;
+      font-size: 19px;
+      line-height: 1.45;
+      color: var(--navy-deep);
+    }
+
     .cta {
-      display: flex; align-items: center; justify-content: space-between; gap: 20px;
-      background: var(--gold-soft); border-top: 3px solid var(--gold);
-      padding: 22px 32px; margin-top: 40px; flex-wrap: wrap;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      background: var(--gold-soft);
+      border-top: 3px solid var(--gold);
+      padding: 22px 32px;
+      margin-top: 40px;
+      flex-wrap: wrap;
     }
-    .cta h5 { font-family: 'Fraunces', serif; font-size: 20px; margin: 0 0 4px; color: var(--navy-deep); border: none; padding: 0; letter-spacing: normal; text-transform: none; }
-    .cta p { margin: 0; font-size: 13px; color: #5c5346; }
+
+    .cta h5 {
+      font-family: 'Fraunces', serif;
+      font-size: 20px;
+      margin: 0 0 4px;
+      color: var(--navy-deep);
+      border: none;
+      padding: 0;
+      letter-spacing: normal;
+      text-transform: none;
+    }
+
+    .cta p {
+      margin: 0;
+      font-size: 13px;
+      color: #5c5346;
+    }
+
     .btn {
-      background: var(--navy); color: #fff; text-decoration: none;
-      padding: 12px 22px; font-size: 11.5px; letter-spacing: .14em; text-transform: uppercase; font-weight: 700;
+      background: var(--navy);
+      color: #fff;
+      text-decoration: none;
+      padding: 12px 22px;
+      font-size: 11.5px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      font-weight: 700;
     }
+
     footer {
-      background: var(--navy-deep); color: rgba(255, 255, 255, .6);
-      padding: 16px 32px; font-size: 11px; letter-spacing: .08em;
-      display: flex; justify-content: space-between; gap: 14px; flex-wrap: wrap;
+      background: var(--navy-deep);
+      color: rgba(255, 255, 255, .6);
+      padding: 16px 32px;
+      font-size: 11px;
+      letter-spacing: .08em;
+      display: flex;
+      justify-content: space-between;
+      gap: 14px;
+      flex-wrap: wrap;
     }
 
     @media (max-width: 900px) {
-      .conteudo { grid-template-columns: 1fr; gap: 16px; }
-      .sumario ol, .notas, .aniversariantes { grid-template-columns: 1fr; }
-      .strip { flex-direction: column; gap: 4px; text-align: center; }
-      nav { position: static; }
+      .conteudo {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      .sumario ol,
+      .notas,
+      .aniversariantes {
+        grid-template-columns: 1fr;
+      }
+
+      .strip {
+        flex-direction: column;
+        gap: 4px;
+        text-align: center;
+      }
+
+      nav {
+        position: static;
+      }
+
+      .photo,
+      .photo.grafico {
+        height: auto;
+        aspect-ratio: 16 / 9;
+      }
     }
   </style>
 </head>
@@ -246,7 +650,6 @@
     </div>
 
     <header class="masthead">
-      <!-- logo ZINE JUK -->
       <img class="logo" src="imagens/logo-zine-juk.png" alt="ZINE JUK">
       <a class="back" href="index.html">← Voltar para a capa</a>
     </header>
@@ -269,27 +672,35 @@
       <p>Edição #01 · Setembro de 2026</p>
       <ol>
         <li><a href="materia.html">Um cliente, muitas necessidades: a tese do ecossistema</a>
-          <small>— Voz do Time</small></li>
+          <small>— Voz do Time</small>
+        </li>
         <li><a href="#prova-de-bastidor">O que os números contam sobre o trabalho que ninguém vê</a>
-          <small>— Prova de Bastidor</small></li>
+          <small>— Prova de Bastidor</small>
+        </li>
         <li><a href="#collab">Squad de IA: a frente que vai construir um cérebro coletivo</a>
-          <small>— Collab do Mês</small></li>
+          <small>— Collab do Mês</small>
+        </li>
         <li><a href="#ai-tu-veio">Recorde de vendas, nova frente de relacionamento e Comitê de Receita</a>
-          <small>— Aí Tu Veio</small></li>
+          <small>— Aí Tu Veio</small>
+        </li>
         <li><a href="#movimento">Equipe Home ajudou sonho a se tornar realidade</a>
-          <small>— Movimento Juk</small></li>
+          <small>— Movimento Juk</small>
+        </li>
         <li><a href="#a-juk-ouviu">Ouvidoria do Catta encurta a escuta com o big boss</a>
-          <small>— A Juk Ouviu</small></li>
+          <small>— A Juk Ouviu</small>
+        </li>
         <li><a href="#informe">Bruna Thamires assume a coordenação de Administração e RH</a>
-          <small>— Informe Juk</small></li>
+          <small>— Informe Juk</small>
+        </li>
         <li><a href="#cattaverso">Cattaverso: as novidades das marcas do ecossistema</a>
-          <small>— Coluna</small></li>
+          <small>— Coluna</small>
+        </li>
         <li><a href="#aniversariantes">Feliz aniversário pra quem faz a Juk ser a Juk</a>
-          <small>— Aniversariantes</small></li>
+          <small>— Aniversariantes</small>
+        </li>
       </ol>
     </section>
 
-    <!-- ===================== PROVA DE BASTIDOR ===================== -->
     <section class="editoria" id="prova-de-bastidor">
       <div class="editoria-head">
         <h2>Prova de Bastidor</h2>
@@ -301,9 +712,8 @@
           <article class="artigo">
             <h3 class="titulo">O que os números contam sobre o trabalho que ninguém vê na Juk Cattani</h3>
 
-            <figure class="photo grafico" data-arquivo="imagens/ranking-elogios.webp">
-              <img src="imagens/ranking-elogios.webp" alt="Ranking individual de menções de agosto"
-                onerror="this.style.display='none'">
+            <figure class="photo grafico">
+              <img src="imagens/ranking-elogios.webp" alt="Ranking individual de menções de agosto" onerror="this.style.display='none'">
               <figcaption>Ranking individual de menções em agosto, com as 8 menções coletivas à Equipe Juk
                 contabilizadas à parte.</figcaption>
             </figure>
@@ -324,9 +734,8 @@
             <p>A liderança do mês trocou de mãos pela terceira vez seguida, o que o próprio Comitê lê como sinal
               de saúde: reconhecimento se espalhando pelo time, não concentrado sempre na mesma pessoa.</p>
 
-            <figure class="photo grafico" data-arquivo="imagens/podio-do-mes.webp">
-              <img src="imagens/podio-do-mes.webp" alt="Pódio do mês: Gabriela Salling, Maite, Tammy e Joanna"
-                onerror="this.style.display='none'">
+            <figure class="photo grafico">
+              <img src="imagens/podio-do-mes.webp" alt="Pódio do mês: Gabriela Salling, Maite, Tammy e Joanna" onerror="this.style.display='none'">
               <figcaption>O pódio de agosto: Gabriela Salling em primeiro, Maite em segundo, Tammy e Joanna
                 dividindo o terceiro lugar.</figcaption>
             </figure>
@@ -370,7 +779,6 @@
       </div>
     </section>
 
-    <!-- ===================== COLLAB DO MÊS ===================== -->
     <section class="editoria" id="collab">
       <div class="editoria-head">
         <h2>Collab do Mês</h2>
@@ -382,9 +790,8 @@
           <article class="artigo">
             <h3 class="titulo">Squad de IA: a nova frente da Juk Cattani que vai construir um cérebro coletivo</h3>
 
-            <figure class="photo" data-arquivo="imagens/squad-ia.webp">
-              <img src="imagens/squad-ia.webp" alt="Reunião do Squad de IA da Juk Cattani" style="object-position:center 45%"
-                onerror="this.style.display='none'">
+            <figure class="photo">
+              <img src="imagens/squad-ia.webp" alt="Reunião do Squad de IA da Juk Cattani" style="object-position:center 45%" onerror="this.style.display='none'">
               <figcaption>Reunião do Squad de IA: Elis Brasil, Tammy Silva dos Santos, Luiz Fernando, José
                 Cavalcanti, Gabriel Bellini e Maite Guerra.</figcaption>
             </figure>
@@ -445,7 +852,6 @@
       </div>
     </section>
 
-    <!-- ===================== AÍ TU VEIO ===================== -->
     <section class="editoria" id="ai-tu-veio">
       <div class="editoria-head">
         <h2>Aí Tu Veio</h2>
@@ -458,9 +864,8 @@
           <article class="artigo">
             <h3 class="titulo">Comercial registra terceiro mês de recorde de vendas</h3>
 
-            <figure class="photo" data-arquivo="imagens/comercial.webp">
-              <img src="imagens/comercial.webp" alt="Time comercial da Juk Cattani" style="object-position:center 45%"
-                onerror="this.style.display='none'">
+            <figure class="photo">
+              <img src="imagens/comercial.webp" alt="Time comercial da Juk Cattani" style="object-position:center 45%" onerror="this.style.display='none'">
               <figcaption>O time por trás do terceiro recorde consecutivo de vendas.</figcaption>
             </figure>
 
@@ -581,7 +986,6 @@
       </div>
     </section>
 
-    <!-- ===================== MOVIMENTO JUK ===================== -->
     <section class="editoria" id="movimento">
       <div class="editoria-head">
         <h2>Movimento Juk</h2>
@@ -593,10 +997,9 @@
           <article class="artigo">
             <h3 class="titulo">Equipe Home ajudou sonho a se tornar realidade</h3>
 
-            <figure class="photo" data-arquivo="PENDENTE: imagens/equipe-home.webp">
-              <img src="imagens/equipe-home.webp" alt="Equipe Home da Juk Cattani"
-                onerror="this.style.display='none'">
-              <figcaption>Foto do núcleo Home — pendente com a Joanna.</figcaption>
+            <figure class="photo alta">
+              <img src="imagens/equipe-home.webp" alt="Equipe Home da Juk Cattani" onerror="this.style.display='none'">
+              <figcaption>O time Home em treinamento sobre o checklist de fiscalização.</figcaption>
             </figure>
 
             <p>Um dos pontos altos do mês na Juk Cattani foi o elogio de uma cliente diretamente à equipe Home,
@@ -631,7 +1034,6 @@
       </div>
     </section>
 
-    <!-- ===================== A JUK OUVIU ===================== -->
     <section class="editoria" id="a-juk-ouviu">
       <div class="editoria-head">
         <h2>A Juk Ouviu</h2>
@@ -643,9 +1045,8 @@
           <article class="artigo">
             <h3 class="titulo">Ouvidoria do Catta encurta a escuta com o big boss</h3>
 
-            <figure class="photo" data-arquivo="imagens/ouvidoria.webp">
-              <img src="imagens/ouvidoria.webp" alt="Guilherme Cattani, CEO da Juk Cattani"
-                onerror="this.style.display='none'">
+            <figure class="photo">
+              <img src="imagens/ouvidoria.webp" alt="Guilherme Cattani, CEO da Juk Cattani" onerror="this.style.display='none'">
               <figcaption>Guilherme Cattani: agora com um canal direto para quem tem algo a dizer.</figcaption>
             </figure>
 
@@ -675,7 +1076,6 @@
       </div>
     </section>
 
-    <!-- ===================== INFORME JUK ===================== -->
     <section class="editoria" id="informe">
       <div class="editoria-head">
         <h2>Informe Juk</h2>
@@ -687,9 +1087,8 @@
           <article class="artigo">
             <h3 class="titulo">Bruna Thamires: a nova coordenadora de Administração e RH da Juk Cattani</h3>
 
-            <figure class="photo" data-arquivo="imagens/bruna-thamires.webp">
-              <img src="imagens/bruna-thamires.webp" alt="Bruna Thamires, coordenadora de Administração e RH"
-                onerror="this.style.display='none'">
+            <figure class="photo">
+              <img src="imagens/bruna-thamires.webp" alt="Bruna Thamires, coordenadora de Administração e RH" onerror="this.style.display='none'">
               <figcaption>Bruna Thamires assumiu a coordenação em setembro.</figcaption>
             </figure>
 
@@ -737,7 +1136,6 @@
       </div>
     </section>
 
-    <!-- ===================== CATTAVERSO ===================== -->
     <section class="editoria" id="cattaverso">
       <div class="editoria-head">
         <h2>Cattaverso</h2>
@@ -745,9 +1143,8 @@
       </div>
 
       <div class="conteudo solo">
-        <figure class="photo" data-arquivo="imagens/advm.webp">
-          <img src="imagens/advm.webp" alt="Participantes do encontro presencial da ADV≠M, mentoria do Grupo Cattani" style="object-position:center 52%"
-            onerror="this.style.display='none'">
+        <figure class="photo">
+          <img src="imagens/advm.webp" alt="Participantes do encontro presencial da ADV≠M, mentoria do Grupo Cattani" style="object-position:center 52%" onerror="this.style.display='none'">
           <figcaption>Turma reunida no encontro presencial da ADV≠M — a próxima edição acontece em novembro, em Alphaville.</figcaption>
         </figure>
 
@@ -802,7 +1199,6 @@
       </div>
     </section>
 
-    <!-- ===================== ANIVERSARIANTES ===================== -->
     <section class="editoria" id="aniversariantes">
       <div class="editoria-head">
         <h2>Feliz aniversário pra quem faz a Juk ser a Juk</h2>
@@ -878,7 +1274,7 @@
             <div class="pessoa">
               <div class="top">
                 <span class="av">EL</span>
-                <div><b>Elis Brasil de Lima</b><span class="data">27/09</span></div>
+                <div><b>Elis Brasil</b><span class="data">27/09</span></div>
               </div>
               <p>Nossa programadora preferida que resolve (quase) tudo conversando com os números.</p>
             </div>
