@@ -296,7 +296,7 @@
 
     .photo.alta {
       height: auto;
-      aspect-ratio: 720 / 380;
+      aspect-ratio: var(--ar, 720 / 380);
     }
 
     .photo img {
@@ -540,6 +540,16 @@
       place-items: center;
       font-size: 12px;
       font-weight: 700;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pessoa .av img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
     .pessoa b {
