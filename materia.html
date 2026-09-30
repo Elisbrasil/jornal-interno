@@ -6,14 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ZINE JUK — A tese do ecossistema Juk Cattani</title>
   <meta name="description" content="Quem está com a gente há algum tempo já ouviu a palavra &quot;ecossistema&quot; em reuniões, apresentações e planejamentos. Vale explicar o que ela significa na prática.">
-  <link rel="canonical" href="https://jukcattani.com.br/zine/materia.html">
+  <link rel="canonical" href="https://jukcattani.com.br/zinejuk/materia.html">
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="ZINE JUK · Juk Cattani">
   <meta property="og:locale" content="pt_BR">
   <meta property="og:title" content="Um cliente, muitas necessidades: a tese do ecossistema Juk Cattani">
   <meta property="og:description" content="Quem está com a gente há algum tempo já ouviu a palavra &quot;ecossistema&quot; em reuniões, apresentações e planejamentos. Vale explicar o que ela significa na prática.">
-  <meta property="og:url" content="https://jukcattani.com.br/zine/materia.html">
-  <meta property="og:image" content="https://jukcattani.com.br/zine/og/tese-do-ecossistema.jpg">
+  <meta property="og:url" content="https://jukcattani.com.br/zinejuk/materia.html">
+  <meta property="og:image" content="https://jukcattani.com.br/zinejuk/og/tese-do-ecossistema.jpg">
   <meta property="og:image:type" content="image/jpeg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -125,12 +125,68 @@
     }
     .head .standfirst { font-size: 17px; line-height: 1.6; color: #3d4457; margin: 0 0 22px; }
 
+    .share {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 34px;
+      height: 34px;
+      margin-left: 10px;
+      vertical-align: 8px;
+      padding: 0;
+      border: 1px solid var(--rule);
+      border-radius: 50%;
+      background: transparent;
+      color: var(--navy);
+      cursor: pointer;
+      transition: background .15s, color .15s, border-color .15s;
+    }
+
+    .share:hover {
+      background: var(--navy);
+      border-color: var(--navy);
+      color: #fff;
+    }
+
+    .share.ok {
+      background: var(--gold);
+      border-color: var(--gold);
+      color: #fff;
+    }
+
+    .share svg {
+      width: 15px;
+      height: 15px;
+    }
+
+    .share-fim {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 30px 0 0;
+      padding-top: 16px;
+      border-top: 1px solid var(--rule);
+      font-size: 10.5px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--muted);
+    }
+
+    .share-fim .share {
+      margin-left: 0;
+      width: 30px;
+      height: 30px;
+      vertical-align: baseline;
+    }
+
     .meta {
       display: flex; align-items: center; gap: 14px; flex-wrap: wrap;
       padding: 14px 0; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule);
       font-size: 11.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); font-weight: 600;
     }
     .meta .dot { width: 3px; height: 3px; background: var(--rule); border-radius: 50%; }
+
 
     .photo {
       position: relative;
@@ -384,6 +440,11 @@
           apresentar: quem faz parte, o que entrega e como podemos trabalhar juntos. Se você tiver curiosidade
           sobre alguma delas, não precisa esperar: procure as pessoas da área e pergunte.</p>
 
+        <div class="share-fim">
+          <span>Compartilhar</span>
+          <button class="share" type="button" data-url="https://jukcattani.com.br/zinejuk/materia.html" data-titulo="Um cliente, muitas necessidades: a tese do ecossistema Juk Cattani" title="Compartilhar esta matéria" aria-label="Compartilhar esta matéria"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.6" y1="10.6" x2="15.4" y2="6.4"/><line x1="8.6" y1="13.4" x2="15.4" y2="17.6"/></svg></button>
+        </div>
+
         <div class="author">
           <span class="av">EM</span>
           <div>
@@ -467,10 +528,33 @@
 
     <footer>
       <span>ZINE JUK · Edição #01 · Setembro de 2026</span>
-      <span>Documento de circulação interna — não divulgar externamente</span>
+      <span>Jornal interno da Juk Cattani</span>
     </footer>
 
   </div>
+
+  <script>
+    document.addEventListener('click', function (e) {
+      var b = e.target.closest ? e.target.closest('.share') : null;
+      if (!b) return;
+      var url = b.getAttribute('data-url');
+      var titulo = b.getAttribute('data-titulo') || document.title;
+      if (navigator.share) {
+        navigator.share({ title: titulo, url: url }).catch(function () { });
+        return;
+      }
+      var ok = function () {
+        b.classList.add('ok');
+        setTimeout(function () { b.classList.remove('ok'); }, 1600);
+      };
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(url).then(ok, function () { window.prompt('Copie o link:', url); });
+      } else {
+        window.prompt('Copie o link:', url);
+      }
+    });
+  </script>
+
 </body>
 
 </html>

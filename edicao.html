@@ -236,6 +236,59 @@
       margin-top: -8px;
     }
 
+    .share {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      margin-left: 10px;
+      vertical-align: 3px;
+      padding: 0;
+      border: 1px solid var(--rule);
+      border-radius: 50%;
+      background: transparent;
+      color: var(--navy);
+      cursor: pointer;
+      transition: background .15s, color .15s, border-color .15s;
+    }
+
+    .share:hover {
+      background: var(--navy);
+      border-color: var(--navy);
+      color: #fff;
+    }
+
+    .share.ok {
+      background: var(--gold);
+      border-color: var(--gold);
+      color: #fff;
+    }
+
+    .share svg {
+      width: 13px;
+      height: 13px;
+    }
+
+    .share-fim {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 26px;
+      padding-top: 16px;
+      border-top: 1px solid var(--rule);
+      font-size: 10.5px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--muted);
+    }
+
+    .share-fim .share {
+      margin-left: 0;
+      vertical-align: baseline;
+    }
+
     .assinatura {
       font-size: 11px;
       letter-spacing: .1em;
@@ -283,6 +336,22 @@
     .photo.alta {
       height: auto;
       aspect-ratio: var(--ar, 720 / 380);
+    }
+
+    .photo.card {
+      height: auto;
+      aspect-ratio: var(--ar, 16 / 9);
+      background: var(--navy-deep);
+    }
+
+    .photo.card::before {
+      content: none;
+    }
+
+    .photo.card img {
+      object-fit: contain;
+      object-position: center;
+      background: transparent;
     }
 
     .photo img {
@@ -701,7 +770,7 @@
         <li><a href="#movimento">Equipe Home ajudou sonho a se tornar realidade e o TCC que nasceu no Digisac</a>
           <small>— Movimento Juk</small>
         </li>
-        <li><a href="#a-juk-ouviu">Ouvidoria do Catta encurta a escuta com o big boss</a>
+        <li><a href="#a-juk-ouviu">Ouvidoria do Catta encurta a escuta e o elogio passa a circular na Juk</a>
           <small>— A Juk Ouviu</small>
         </li>
         <li><a href="#informe">Bruna Thamires assume a coordenação de Administração e RH</a>
@@ -767,6 +836,11 @@
                 percepção, a qualidade do trabalho que vem sendo entregue, e também dar a esse esforço o
                 reconhecimento que ele merece dentro de casa.”</p>
               <span>Tatiana Cotrim · Head de Relacionamento</span>
+            </div>
+
+            <div class="share-fim">
+              <span>Compartilhar</span>
+              <button class="share" type="button" data-url="https://jukcattani.com.br/zinejuk/noticia-numeros-bastidor.html" data-titulo="O que os números contam sobre o trabalho que ninguém vê na Juk Cattani" title="Compartilhar esta matéria" aria-label="Compartilhar esta matéria"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.6" y1="10.6" x2="15.4" y2="6.4"/><line x1="8.6" y1="13.4" x2="15.4" y2="17.6"/></svg></button>
             </div>
           </article>
         </div>
@@ -839,6 +913,11 @@
               operações, Eduardo Matzenbacher, e chega com uma visão de longo prazo da gestão: ter uma base de
               conhecimento forte sobre como usar inteligência artificial no dia a dia, independente da
               ferramenta, com espaço para buscar melhorias e novas ideias de projeto toda sexta-feira.</p>
+
+            <div class="share-fim">
+              <span>Compartilhar</span>
+              <button class="share" type="button" data-url="https://jukcattani.com.br/zinejuk/noticia-squad-de-ia.html" data-titulo="Squad de IA: a nova frente da Juk Cattani que vai construir um cérebro coletivo" title="Compartilhar esta matéria" aria-label="Compartilhar esta matéria"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.6" y1="10.6" x2="15.4" y2="6.4"/><line x1="8.6" y1="13.4" x2="15.4" y2="17.6"/></svg></button>
+            </div>
           </article>
         </div>
 
@@ -905,6 +984,11 @@
 
             <p>Mais do que ampliar o volume de vendas, o avanço fortalece a presença da Juk entre profissionais e
               clínicas da harmonização que buscam segurança para crescer.</p>
+
+            <div class="share-fim">
+              <span>Compartilhar</span>
+              <button class="share" type="button" data-url="https://jukcattani.com.br/zinejuk/noticia-recorde-de-vendas.html" data-titulo="Comercial registra terceiro mês de recorde de vendas" title="Compartilhar esta matéria" aria-label="Compartilhar esta matéria"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.6" y1="10.6" x2="15.4" y2="6.4"/><line x1="8.6" y1="13.4" x2="15.4" y2="17.6"/></svg></button>
+            </div>
           </article>
 
           <article class="artigo">
@@ -936,10 +1020,21 @@
             <p>Com a nova frente, o relacionamento com os clientes ganha acompanhamento ainda mais próximo, capaz
               de tornar visível o valor entregue pela assessoria e identificar oportunidades de aprimorar
               continuamente a experiência de quem conta com a Juk.</p>
+
+            <div class="share-fim">
+              <span>Compartilhar</span>
+              <button class="share" type="button" data-url="https://jukcattani.com.br/zinejuk/noticia-stephanie-molina.html" data-titulo="Stephanie Molina assume nova frente na relação com clientes Juk" title="Compartilhar esta matéria" aria-label="Compartilhar esta matéria"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.6" y1="10.6" x2="15.4" y2="6.4"/><line x1="8.6" y1="13.4" x2="15.4" y2="17.6"/></svg></button>
+            </div>
           </article>
 
           <article class="artigo">
             <h3 class="titulo">Comitê de Receita transforma dados de reuniões em inteligência para o negócio</h3>
+
+            <figure class="photo alta" style="--ar: 16 / 9">
+              <img src="imagens/comite-receita.webp" alt="Os quatro integrantes do Comitê de Receita da Juk Cattani" onerror="this.style.display='none'">
+              <figcaption>O Comitê de Receita: Guilherme Cattani, Gabriel Bellini, Eduardo Matzenbacher e Dani
+                Sisnandes.</figcaption>
+            </figure>
 
             <p>Desde julho de 2026, a diretoria da Juk Cattani tem mergulhado em dados para identificar
               necessidades do mercado, orientar a produção de conteúdo e o aprimoramento dos serviços. A ação é
@@ -955,6 +1050,11 @@
             <p>O movimento fecha um ciclo completo entre demanda e entrega real e já tem surtido efeitos
               importantes para que a Juk Cattani ajude de forma mais assertiva os negócios mais valiosos e
               respeitados da harmonização.</p>
+
+            <div class="share-fim">
+              <span>Compartilhar</span>
+              <button class="share" type="button" data-url="https://jukcattani.com.br/zinejuk/noticia-comite-de-receita.html" data-titulo="Comitê de Receita transforma dados de reuniões em inteligência para o negócio" title="Compartilhar esta matéria" aria-label="Compartilhar esta matéria"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.6" y1="10.6" x2="15.4" y2="6.4"/><line x1="8.6" y1="13.4" x2="15.4" y2="17.6"/></svg></button>
+            </div>
           </article>
 
           <article class="artigo">
@@ -979,6 +1079,11 @@
               <h4>Vagas abertas internamente</h4>
               <p>O atendimento fora do horário comercial está em estruturação e tem vagas abertas para
                 interessados do próprio escritório. Se quiser participar, procure a sua liderança.</p>
+            </div>
+
+            <div class="share-fim">
+              <span>Compartilhar</span>
+              <button class="share" type="button" data-url="https://jukcattani.com.br/zinejuk/noticia-solucoes-made-in-juk.html" data-titulo="Soluções made in Juk" title="Compartilhar esta matéria" aria-label="Compartilhar esta matéria"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.6" y1="10.6" x2="15.4" y2="6.4"/><line x1="8.6" y1="13.4" x2="15.4" y2="17.6"/></svg></button>
             </div>
           </article>
         </div>
@@ -1038,6 +1143,11 @@
               <p>A Joanna Holthausen e ao time Home, pela entrega que transformou um contrato em oportunidade real
                 pra cliente.</p>
             </div>
+
+            <div class="share-fim">
+              <span>Compartilhar</span>
+              <button class="share" type="button" data-url="https://jukcattani.com.br/zinejuk/noticia-equipe-home.html" data-titulo="Equipe Home ajudou sonho a se tornar realidade" title="Compartilhar esta matéria" aria-label="Compartilhar esta matéria"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.6" y1="10.6" x2="15.4" y2="6.4"/><line x1="8.6" y1="13.4" x2="15.4" y2="17.6"/></svg></button>
+            </div>
           </article>
 
           <article class="artigo">
@@ -1080,6 +1190,11 @@
               <h4>Fica o reconhecimento</h4>
               <p>À Jana, que transformou a rotina do atendimento em pesquisa acadêmica e trouxe o resultado de
                 volta para dentro da Juk. Parabéns — a gente tem muito orgulho de você.</p>
+            </div>
+
+            <div class="share-fim">
+              <span>Compartilhar</span>
+              <button class="share" type="button" data-url="https://jukcattani.com.br/zinejuk/noticia-jana-tcc.html" data-titulo="Do Digisac da Juk ao TCC: como as dúvidas dos clientes viraram pesquisa jurídica" title="Compartilhar esta matéria" aria-label="Compartilhar esta matéria"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.6" y1="10.6" x2="15.4" y2="6.4"/><line x1="8.6" y1="13.4" x2="15.4" y2="17.6"/></svg></button>
             </div>
           </article>
         </div>
@@ -1133,6 +1248,49 @@
             <p>Agora, qualquer colaborador pode usar o canal, anonimamente ou não, para levar até ele informações,
               elogios ou reclamações. O formulário cai direto na caixa de e-mails pessoal do Guilherme, sem passar
               por ninguém no meio do caminho.</p>
+
+            <div class="share-fim">
+              <span>Compartilhar</span>
+              <button class="share" type="button" data-url="https://jukcattani.com.br/zinejuk/noticia-ouvidoria-do-catta.html" data-titulo="Ouvidoria do Catta encurta a escuta com o big boss" title="Compartilhar esta matéria" aria-label="Compartilhar esta matéria"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.6" y1="10.6" x2="15.4" y2="6.4"/><line x1="8.6" y1="13.4" x2="15.4" y2="17.6"/></svg></button>
+            </div>
+          </article>
+
+          <article class="artigo">
+            <h3 class="titulo">O elogio vai circular na Juk</h3>
+
+            <figure class="photo card" style="--ar: 16 / 9">
+              <img src="imagens/elogios-semanal.webp" alt="Card do Projeto Elogios com as três colaboradoras mais elogiadas da semana" onerror="this.style.display='none'">
+              <figcaption>O primeiro pódio semanal, divulgado em 25 de setembro de 2026.</figcaption>
+            </figure>
+
+            <p>Todo mês, clientes da Juk Cattani param para agradecer. Às vezes é um advogado que resolveu uma
+              dúvida com agilidade, às vezes é um atendimento que fez diferença num momento difícil. Esses elogios
+              chegam por vários caminhos e são encaminhados ao time de Relacionamento, que registra cada um. Com o
+              tempo, o setor percebeu que esses encaminhamentos foram diminuindo.</p>
+
+            <p>Para mudar isso, a proposta de Tammy Silva dos Santos e Tatiana de Melo Cotrim é dar visibilidade
+              mais frequente a esses reconhecimentos. As duas já fazem juntas o fechamento mensal dos elogios e
+              enviam o resumo para a liderança. Agora, esse quadro também passa a ser publicado aqui no ZINE JUK,
+              no fim de cada mês, para que toda a equipe saiba quem foi lembrado pelos clientes.</p>
+
+            <p>Além disso, em parceria com o Marketing, os elogios da semana já começaram a ser compartilhados nos
+              grupos dos colaboradores, sempre às sextas-feiras. Cada pessoa reconhecida aparece com um avatar
+              ilustrado, criado especialmente para a seção e inspirado em algum gosto pessoal dela.</p>
+
+            <h4>Como participar</h4>
+
+            <p>Recebeu um elogio de cliente? Encaminhe para o Relacionamento. Todo elogio enviado entra no
+              fechamento do mês e conta para uma edição especial de fim de ano.</p>
+
+            <div class="callout">
+              <h4>Fique de olho</h4>
+              <p>Na próxima edição saem os primeiros nomes do quadro mensal.</p>
+            </div>
+
+            <div class="share-fim">
+              <span>Compartilhar</span>
+              <button class="share" type="button" data-url="https://jukcattani.com.br/zinejuk/noticia-elogio-circula.html" data-titulo="O elogio vai circular na Juk" title="Compartilhar esta matéria" aria-label="Compartilhar esta matéria"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.6" y1="10.6" x2="15.4" y2="6.4"/><line x1="8.6" y1="13.4" x2="15.4" y2="17.6"/></svg></button>
+            </div>
           </article>
         </div>
 
@@ -1185,6 +1343,11 @@
             </div>
 
             <p>Seja bem-vinda, Bruna.</p>
+
+            <div class="share-fim">
+              <span>Compartilhar</span>
+              <button class="share" type="button" data-url="https://jukcattani.com.br/zinejuk/noticia-bruna-thamires.html" data-titulo="Bruna Thamires: a nova coordenadora de Administração e RH da Juk Cattani" title="Compartilhar esta matéria" aria-label="Compartilhar esta matéria"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.6" y1="10.6" x2="15.4" y2="6.4"/><line x1="8.6" y1="13.4" x2="15.4" y2="17.6"/></svg></button>
+            </div>
           </article>
         </div>
 
@@ -1250,8 +1413,8 @@
 
           <div class="nota">
             <h4>Academia da Independência</h4>
-            <p>A ADI vem se consolidando como uma referência na produção de conteúdo para negócios da Beauty
-              Economy. Já são mais de 95 mil seguidores no Instagram e mais de 2 mil no recém-lançado Substack,
+            <p>A ADI vem se consolidando como uma referência na tradução de tendências para a Beauty
+              Economy. Já são mais de 100 mil seguidores no Instagram e mais de 2 mil no recém-lançado Substack,
               canal focado em artigos. A Academia também ampliou sua esteira de produtos no último trimestre, e
               hoje oferece, além das aulas na plataforma, produtos digitais como Pack de Posts e Planner para
               profissionais da HOF.</p>
@@ -1379,10 +1542,33 @@
 
     <footer>
       <span>ZINE JUK · Edição #01 · Setembro de 2026</span>
-      <span>Documento de circulação interna — não divulgar externamente</span>
+      <span>Jornal interno da Juk Cattani</span>
     </footer>
 
   </div>
+
+  <script>
+    document.addEventListener('click', function (e) {
+      var b = e.target.closest ? e.target.closest('.share') : null;
+      if (!b) return;
+      var url = b.getAttribute('data-url');
+      var titulo = b.getAttribute('data-titulo') || document.title;
+      if (navigator.share) {
+        navigator.share({ title: titulo, url: url }).catch(function () { });
+        return;
+      }
+      var ok = function () {
+        b.classList.add('ok');
+        setTimeout(function () { b.classList.remove('ok'); }, 1600);
+      };
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(url).then(ok, function () { window.prompt('Copie o link:', url); });
+      } else {
+        window.prompt('Copie o link:', url);
+      }
+    });
+  </script>
+
 </body>
 
 </html>

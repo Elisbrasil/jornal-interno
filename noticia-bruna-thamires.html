@@ -6,14 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bruna Thamires: a nova coordenadora de Administração e RH da Juk Cattani — ZINE JUK</title>
   <meta name="description" content="A Juk Cattani tem novidade na coordenação: em setembro, Bruna Thamires assumiu a Coordenação Administrativa, Financeira e de Gestão de Pessoas.">
-  <link rel="canonical" href="https://jukcattani.com.br/zine/noticia-bruna-thamires.html">
+  <link rel="canonical" href="https://jukcattani.com.br/zinejuk/noticia-bruna-thamires.html">
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="ZINE JUK · Juk Cattani">
   <meta property="og:locale" content="pt_BR">
   <meta property="og:title" content="Bruna Thamires: a nova coordenadora de Administração e RH da Juk Cattani">
   <meta property="og:description" content="A Juk Cattani tem novidade na coordenação: em setembro, Bruna Thamires assumiu a Coordenação Administrativa, Financeira e de Gestão de Pessoas.">
-  <meta property="og:url" content="https://jukcattani.com.br/zine/noticia-bruna-thamires.html">
-  <meta property="og:image" content="https://jukcattani.com.br/zine/og/bruna-thamires.jpg">
+  <meta property="og:url" content="https://jukcattani.com.br/zinejuk/noticia-bruna-thamires.html">
+  <meta property="og:image" content="https://jukcattani.com.br/zinejuk/og/bruna-thamires.jpg">
   <meta property="og:image:type" content="image/jpeg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -250,6 +250,59 @@
       margin-top: -8px;
     }
 
+    .share {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      margin-left: 10px;
+      vertical-align: 3px;
+      padding: 0;
+      border: 1px solid var(--rule);
+      border-radius: 50%;
+      background: transparent;
+      color: var(--navy);
+      cursor: pointer;
+      transition: background .15s, color .15s, border-color .15s;
+    }
+
+    .share:hover {
+      background: var(--navy);
+      border-color: var(--navy);
+      color: #fff;
+    }
+
+    .share.ok {
+      background: var(--gold);
+      border-color: var(--gold);
+      color: #fff;
+    }
+
+    .share svg {
+      width: 13px;
+      height: 13px;
+    }
+
+    .share-fim {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 26px;
+      padding-top: 16px;
+      border-top: 1px solid var(--rule);
+      font-size: 10.5px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--muted);
+    }
+
+    .share-fim .share {
+      margin-left: 0;
+      vertical-align: baseline;
+    }
+
     .assinatura {
       font-size: 11px;
       letter-spacing: .1em;
@@ -297,6 +350,22 @@
     .photo.alta {
       height: auto;
       aspect-ratio: var(--ar, 720 / 380);
+    }
+
+    .photo.card {
+      height: auto;
+      aspect-ratio: var(--ar, 16 / 9);
+      background: var(--navy-deep);
+    }
+
+    .photo.card::before {
+      content: none;
+    }
+
+    .photo.card img {
+      object-fit: contain;
+      object-position: center;
+      background: transparent;
     }
 
     .photo img {
@@ -732,6 +801,11 @@
             </div>
 
             <p>Seja bem-vinda, Bruna.</p>
+
+            <div class="share-fim">
+              <span>Compartilhar</span>
+              <button class="share" type="button" data-url="https://jukcattani.com.br/zinejuk/noticia-bruna-thamires.html" data-titulo="Bruna Thamires: a nova coordenadora de Administração e RH da Juk Cattani" title="Compartilhar esta matéria" aria-label="Compartilhar esta matéria"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.6" y1="10.6" x2="15.4" y2="6.4"/><line x1="8.6" y1="13.4" x2="15.4" y2="17.6"/></svg></button>
+            </div>
           </article>
         </div>
       </div>
@@ -751,6 +825,29 @@
       <span>Jornal interno da Juk Cattani</span>
     </footer>
   </div>
+
+  <script>
+    document.addEventListener('click', function (e) {
+      var b = e.target.closest ? e.target.closest('.share') : null;
+      if (!b) return;
+      var url = b.getAttribute('data-url');
+      var titulo = b.getAttribute('data-titulo') || document.title;
+      if (navigator.share) {
+        navigator.share({ title: titulo, url: url }).catch(function () { });
+        return;
+      }
+      var ok = function () {
+        b.classList.add('ok');
+        setTimeout(function () { b.classList.remove('ok'); }, 1600);
+      };
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(url).then(ok, function () { window.prompt('Copie o link:', url); });
+      } else {
+        window.prompt('Copie o link:', url);
+      }
+    });
+  </script>
+
 </body>
 
 </html>
